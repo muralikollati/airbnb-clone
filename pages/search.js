@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { useRouter } from "next/dist/client/router";
 import { Footer } from "../components/Footer";
 import Header from "../components/Header";
+import Map from "../components/Map";
 import RoomFilterButton from "../components/RoomFilterButton";
 import RoomSerchResults from "../components/RoomSerchResults";
 
@@ -15,7 +16,7 @@ const range = `${formatedStartDate} - ${formatedEndDate}`
     return(
         <div>
             <Header placeholder= {`${ location } | ${ formatedStartDate } - ${ formatedEndDate } | ${ nofGuests } `}/>
-            <main>
+            <main className="flex">
                 <section>
                     <p className="text-xs pt-10 pl-5">
                         300+ Stays  - { range } - for { nofGuests } guests
@@ -32,8 +33,8 @@ const range = `${formatedStartDate} - ${formatedEndDate}`
                         ))
                     }
                 </section>
-                <section>
-                   
+                <section className="hidden xl:inline-flex xl:min-w-[600px]">
+                   <Map roomSerchResults={ roomSerchResults }/>
                     
                 </section>
             </main>

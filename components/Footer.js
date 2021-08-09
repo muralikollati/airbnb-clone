@@ -1,3 +1,4 @@
+import About from "./About"
 import { FooterList } from "./FooterList"
 
 export function Footer() {
@@ -11,6 +12,7 @@ export function Footer() {
                         title={data.title}
                         items={data.items}
                    />
+                  
                ))
            }
         </div>
